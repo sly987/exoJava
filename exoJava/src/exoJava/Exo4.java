@@ -18,7 +18,7 @@ public class Exo4 {
 			System.out.println("l'annee n'est pas bissextile");
 		} else {
 			System.out.println("l'annee est bissextile");
-			}
+		}
 	}
 
 }
