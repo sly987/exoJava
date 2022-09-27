@@ -13,11 +13,11 @@ public class Exo5 {
 		
 		for(int i = 0; i<hauteur; i++) {
 			String etoile = "";
-			for(int j = i; j<hauteur; j++) {
+			for(int j = 1; j<hauteur-i; j++) {
 				etoile +=" ";
 			}
 			etoile+="*";
-			for(int j = hauteur-i ; j<hauteur; j++) {
+			for(int j = 0 ; j<i; j++) {
 				etoile += "**";
 			}
 			System.out.println(etoile);
