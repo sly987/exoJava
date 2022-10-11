@@ -27,11 +27,9 @@ public class Exo2 {
 		}
 		int intermédiaire = 0;
 		int middle = taille/2;
-		if(taille % 2 != 0) {
-			middle+=1;
-		}
+
 		for(int i = 0; i<middle ; i++) {
-			if(i==(middle-1)) {
+			if(i==middle && taille % 2 !=0) {
 				for(int j = 0 ; j<middle; j++) {
 					intermédiaire = matrice[i][j];
 					matrice[i][j]= matrice[taille-1-i][taille-1-j];
