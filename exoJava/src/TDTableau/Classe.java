@@ -43,10 +43,11 @@ public class Classe {
 			notes[i] = clavier.nextInt();
 		}
 		System.out.println("Les " + notes.length + " notes ont été saisie");
+		estSaisie = true;
 	}
 	
 	public void afficherCalculs() {
-		if(estSaisie) {
+		if(!estSaisie) {
 			System.out.println("Saisir les notes");
 			return;
 		}
