@@ -9,6 +9,7 @@ public class Exo4 {
 			System.out.print(tab[i] + " ");
 		}
 		int intermédiaire;
+		boolean permut = true;
 		for(int i = (tab.length -1) ; i >= 1 ; i-- ) {
 			for(int j = 0 ; j<= (i -1); j++) {
 				if(tab[j+1] < tab[j]) {

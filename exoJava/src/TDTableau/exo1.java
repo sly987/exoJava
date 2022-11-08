@@ -9,25 +9,29 @@ public class exo1 {
 		char[] tab = {'a', 'b', 'c' , 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
 		Scanner clavier = new Scanner(System.in);
 		char choix;
+		char caractere;
+		String car;
 		do {
-			System.out.println("saisir une lettre en minuscule");
-			char lettre = clavier.next().charAt(0);
-			boolean estTrouve = false;
-			for(int indice =0 ; indice<tab.length ; indice++) {
-				if(lettre == tab[indice]) {
-					System.out.println("trouvé, c'est d'indice " + indice);
-					estTrouve = true;
-					break;
-				}
+			do {
+				System.out.println("Saisir un caractere alphabetique");
+				car = clavier.next();
+			} while(car.length()!= 1 || ((caractere = car.toLowerCase().charAt(0)) < 'a' || caractere > 'z'));
 					
-			}
-			if(!estTrouve) {
-				System.out.println("pas trouvé");	
+			boolean estTrouve = false;
+			int indice;
+			for(indice =0 ; indice<tab.length && !estTrouve ; indice++) {
+				estTrouve = (tab[indice] == caractere);
+				}
+	
+			if(estTrouve) {
+				System.out.println("trouvé, c'est de position " + indice);	
+			} else {
+				System.out.println(" non trouvé");
 			}
 			System.out.println("Ressayer? o/n");
 			choix = clavier.next().charAt(0);
 		}while(choix == 'o');
 		clavier.close();
 	}
-
+	
 }
