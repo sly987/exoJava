@@ -5,9 +5,16 @@ public class Ident {
 	private int identifiant;
 	private static int compteur;
 	
-	public Ident() {
+	private static int getIdUnique() {
 		compteur++;
-		identifiant = compteur;
+		return compteur;
+	}
+	
+	public static int lastID() {
+		return compteur;
+	}
+	public Ident() {
+		identifiant = getIdUnique();
 		
 	}
 	
@@ -15,9 +22,7 @@ public class Ident {
 		return identifiant;
 	}
 	
-	public static int lastID() {
-		return compteur;
-	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Ident a = new Ident();

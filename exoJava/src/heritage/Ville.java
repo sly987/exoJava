@@ -1,12 +1,14 @@
-package Classe;
+package heritage;
 
 public class Ville {
 
-	private String nom;
-	private String pays;
-	private int nbHabitant;
-	private char categorie;
-	private static int compteur;
+	protected String nom;
+	protected String pays;
+	protected int nbHabitant;
+	protected char categorie;
+	protected static int compteur;
+	
+
 	
 	public Ville(int nbHabitant) {
 		setNbHabitant(nbHabitant);
