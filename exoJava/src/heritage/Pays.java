@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class Pays {
 	private String nom;
-	private Ville[] listeVille = new Ville[0];
+	private Ville[] listeVille;
 	private Capital capital;
 	private int nbHabitant;
 	
@@ -12,7 +12,7 @@ public class Pays {
 		this.nom = nom;
 	}
 	public void ajouterVille(Ville ville) {
-		if(ville.getClass().toString().contains("Capital")) {
+		if(ville instanceof Capital) {
 			if(this.capital == null) {
 				this.capital = (Capital) ville;
 			} else {
@@ -20,14 +20,19 @@ public class Pays {
 				return;
 			}
 		}
+		int taille = 0;
+		if(listeVille != null) {
+			taille = listeVille.length;
+		}
 		Ville[] temp = listeVille;
 		listeVille = new Ville[listeVille.length+1];
-		for(int i = 0; i<temp.length; i++ ) {
+		for(int i = 0; i<taille; i++ ) {
 			listeVille[i] = temp[i];
 		}
-		listeVille[temp.length] = ville;
+		listeVille[taille] = ville;
 		nbHabitant += ville.nbHabitant;
 	}
+		
 	
 	private void ajouterCapital(Capital capital) {
 		if(this.capital == null) {

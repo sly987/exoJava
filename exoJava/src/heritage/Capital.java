@@ -24,7 +24,7 @@ public class Capital extends Ville {
 	
 	@Override
 	public void afficher() {
-		System.out.println("La capital " + nom + " situé en " + pays + " a " + nbHabitant + " d'habitant");
+		System.out.println("La capitale " + nom + " situé en " + pays + " a " + nbHabitant + " d'habitant");
 	}
 	
 	public static void main(String[] args) {

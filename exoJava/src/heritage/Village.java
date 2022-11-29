@@ -8,10 +8,11 @@ public class Village extends Ville {
 	
 	@Override
 	public void setNbHabitant(int nbHabitant) {
-		if(nbHabitant<20_000) {
+		super.setNbHabitant(nbHabitant);
+		if(nbHabitant>20_000) {
+			this.nbHabitant = 0;
 			System.out.println("erreur pas assez d'habitant");
-		}else {
-			this.nbHabitant = nbHabitant;
+			
 		}
 	}
 	
